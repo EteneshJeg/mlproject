@@ -53,23 +53,15 @@ class DataTransformation:
             logging.info(f"Categorical columns encoding complemented: {categorical_columns}")
             logging.info(f"Numerical columns standard scaling  complemented: {numerical_columns}")
             
-
             preprocessor=ColumnTransformer(
                 [
                 ("num_pipeline",num_pipeline,numerical_columns),
                 ("cat_pipelines",cat_pipeline,categorical_columns)
 
                 ]
-
-
             )
-
-
             return preprocessor
 
-
-            
-            
         except Exception as e:
             raise CustomException(e,sys)
             
@@ -115,7 +107,7 @@ class DataTransformation:
             return (
                 train_arr,
                 test_arr,
-                self.data_transformation_config.preprocessor_obj_file_path,
+                # self.data_transformation_config.preprocessor_obj_file_path,
             )
 
         except Exception as e:
